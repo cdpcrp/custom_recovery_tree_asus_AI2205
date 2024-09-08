@@ -57,6 +57,9 @@ PRODUCT_PACKAGES += \
     f2fs_io \
     check_f2fs
 
+# Fuse Passthrough
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
+
 # OEM OTACerts
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(LOCAL_PATH)/security/otacert
