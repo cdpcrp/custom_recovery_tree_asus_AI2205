@@ -98,6 +98,10 @@ RECOVERY_BINARY_SOURCE_FILES += \
     $(TARGET_OUT_EXECUTABLES)/debuggerd \
     $(TARGET_OUT_EXECUTABLES)/strace
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
 # Userdata Checkpoint
 PRODUCT_PACKAGES += \
     checkpoint_gc
