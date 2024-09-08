@@ -102,6 +102,11 @@ RECOVERY_BINARY_SOURCE_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Soong namespaces, Config
+SOONG_CONFIG_NAMESPACES += ufsbsg
+SOONG_CONFIG_ufsbsg += ufsframework
+SOONG_CONFIG_ufsbsg_ufsframework := bsg
+
 # Userdata Checkpoint
 PRODUCT_PACKAGES += \
     checkpoint_gc
