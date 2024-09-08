@@ -85,6 +85,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_RAMDISK_USE_LZ4 := true
 
 # Recovery, Root
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 
 # SPL
