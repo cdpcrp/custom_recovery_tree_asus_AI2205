@@ -6,6 +6,7 @@
 #
 
 LOCAL_PATH := device/asus/ASUS_AI2205
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -13,7 +14,24 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-# Boot control HAL
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_vendor=true \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
+    FILESYSTEM_TYPE_vendor=ext4 \
+    POSTINSTALL_OPTIONAL_vendor=true
+
+# A/B, Scripts
+PRODUCT_PACKAGES += \
+    otapreopt_script \
+    cppreopts.sh
+
+# A/B, Update Engine
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_verifier \
+    update_engine_sideload
+
+# Boot Control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti \
     android.hardware.boot@1.2-impl-qti.recovery \
@@ -27,9 +45,12 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
+# F2FS utilities
 PRODUCT_PACKAGES += \
-    otapreopt_script \
-    cppreopts.sh \
-    update_engine \
-    update_verifier \
-    update_engine_sideload
+    sg_write_buffer \
+    f2fs_io \
+    check_f2fs
+
+# Userdata Checkpoint
+PRODUCT_PACKAGES += \
+    checkpoint_gc
