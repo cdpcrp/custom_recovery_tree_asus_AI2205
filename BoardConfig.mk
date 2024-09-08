@@ -44,6 +44,8 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
+TARGET_USES_UEFI := true
+TARGET_USES_REMOTEPROC := true
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 4
@@ -88,6 +90,7 @@ TARGET_BOOTLOADER_BOARD_NAME := $(TARGET_BOARD_PLATFORM)
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TARGET_RECOVERY_QCOM_RTC_FIX := true
 
 # Recovery, Extras
 BOARD_ROOT_EXTRA_FOLDERS += \
@@ -117,10 +120,24 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_LIBRESETPROP := true
+TW_NO_EXFAT_FUSE := true
+TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
+TW_QCOM_ATS_OFFSET := 1666528204500
+TW_EXCLUDE_APEX := true
+TW_STATUS_ICONS_ALIGN := center
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
+TW_DEFAULT_BRIGHTNESS := 200
+TW_OVERRIDE_SYSTEM_PROPS := \
+    "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 
 # TWRP Debugging
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
+
+# TWRP Device Version
+TW_DEVICE_VERSION := A13_2205-0001
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
