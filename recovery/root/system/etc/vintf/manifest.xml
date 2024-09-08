@@ -2,7 +2,7 @@
 Release: TKQ1.220928.001-33.0820.0810.217-0-release-keys
 -->
 <manifest version="2.0" type="framework">
-    <hal format="hidl" max-level="6">
+    <hal format="hidl">
         <name>android.frameworks.displayservice</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

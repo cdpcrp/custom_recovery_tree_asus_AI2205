@@ -1,7 +1,7 @@
 <!--
 Release: TKQ1.220928.001-33.0820.0810.217-0-release-keys
 -->
-<manifest version="4.0" type="device" target-level="7">
+<manifest version="4.0" type="device" target-level="6">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -663,4 +663,5 @@ Release: TKQ1.220928.001-33.0820.0810.217-0-release-keys
     <sepolicy>
         <version>33.0</version>
     </sepolicy>
+    <kernel target-level="6"/>
 </manifest>
