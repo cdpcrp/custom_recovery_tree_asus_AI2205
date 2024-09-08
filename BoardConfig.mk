@@ -15,9 +15,14 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     odm \
     system \
+    system_dlkm \
     product \
     system_ext \
-    vendor
+    vendor \
+    vendor_dlkm \
+    vendor_boot \
+    recovery \
+    boot
 
 # Architecture
 TARGET_ARCH := arm64
@@ -56,7 +61,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 # Partitions, Super
 BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := asus_dynamic_partitions
-BOARD_ASUS_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor odm
+BOARD_ASUS_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor odm vendor_dlkm
 BOARD_ASUS_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 # Partitions, Type
