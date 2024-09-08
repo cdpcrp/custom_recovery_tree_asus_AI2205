@@ -31,6 +31,12 @@ PRODUCT_PACKAGES += \
     update_verifier \
     update_engine_sideload
 
+# API Level
+BOARD_API_LEVEL := 31
+BOARD_SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
+PRODUCT_SHIPPING_API_LEVE := $(BOARD_API_LEVEL)
+SHIPPING_API_LEVEL := $(BOARD_API_LEVEL)
+
 # Boot Control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti \
