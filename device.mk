@@ -57,6 +57,10 @@ PRODUCT_PACKAGES += \
     f2fs_io \
     check_f2fs
 
+# OEM OTACerts
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(LOCAL_PATH)/security/otacert
+
 # QCOM Decryption
 PRODUCT_PACKAGES += \
     qcom_decrypt \
