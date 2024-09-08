@@ -22,3 +22,16 @@ PRODUCT_MODEL := ROG Phone 7
 PRODUCT_MANUFACTURER := $(PRODUCT_BRAND)
 
 PRODUCT_GMS_CLIENTID_BASE := android-$(PRODUCT_BRAND)
+
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
+# Enable virtual A/B OTA
+ENABLE_VIRTUAL_AB := true
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression.mk)
+
+# Enable installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
+# Setup dalvik vm configs
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
