@@ -1,7 +1,7 @@
 <!--
 Release: TKQ1.220928.001-33.0820.0810.217-0-release-keys
 -->
-<manifest version="5.0" type="device" target-level="7">
+<manifest version="4.0" type="device" target-level="7">
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
