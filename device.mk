@@ -19,6 +19,14 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti.recovery \
     android.hardware.boot@1.2-service
 
+# Dynamic, Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Dynamic, Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
+
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
