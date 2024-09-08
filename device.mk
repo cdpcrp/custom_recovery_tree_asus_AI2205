@@ -72,7 +72,9 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libion \
     libnetutils \
     vendor.display.config@1.0 \
-    vendor.display.config@2.0
+    vendor.display.config@2.0 \
+    debuggerd \
+    strace
 
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
@@ -84,6 +86,10 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libnetutils.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
+
+RECOVERY_BINARY_SOURCE_FILES += \
+    $(TARGET_OUT_EXECUTABLES)/debuggerd \
+    $(TARGET_OUT_EXECUTABLES)/strace
 
 # Userdata Checkpoint
 PRODUCT_PACKAGES += \

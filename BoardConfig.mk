@@ -108,6 +108,10 @@ TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 
+# TWRP Debugging
+TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
