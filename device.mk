@@ -57,6 +57,11 @@ PRODUCT_PACKAGES += \
     f2fs_io \
     check_f2fs
 
+# QCOM Decryption
+PRODUCT_PACKAGES += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
+
 # Userdata Checkpoint
 PRODUCT_PACKAGES += \
     checkpoint_gc
