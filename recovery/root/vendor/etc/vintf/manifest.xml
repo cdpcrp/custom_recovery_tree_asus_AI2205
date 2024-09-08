@@ -45,6 +45,7 @@ Release: TKQ1.220928.001-33.0820.0810.217-0-release-keys
     <hal format="hidl">
         <name>android.hardware.keymaster</name>
         <transport>hwbinder</transport>
+        <fqname>@4.0::IKeymasterDevice/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.media.omx</name>
