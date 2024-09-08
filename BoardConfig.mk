@@ -86,6 +86,13 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Recovery, Extras
+BOARD_ROOT_EXTRA_FOLDERS += \
+    batinfo \
+    ADF \
+    APD \
+    asdf
+
 # Recovery, Ramdisk
 BOARD_RAMDISK_USE_LZ4 := true
 
