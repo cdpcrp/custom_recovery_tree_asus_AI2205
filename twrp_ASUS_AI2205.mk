@@ -16,7 +16,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 $(call inherit-product, device/asus/ASUS_AI2205/device.mk)
 
 PRODUCT_DEVICE := ASUS_AI2205
-PRODUCT_NAME := twrp_$(PRODUCT_NAME)
+PRODUCT_NAME := twrp_$(PRODUCT_DEVICE)
 PRODUCT_BRAND := asus
 PRODUCT_MODEL := ROG Phone 7
 PRODUCT_MANUFACTURER := $(PRODUCT_BRAND)
