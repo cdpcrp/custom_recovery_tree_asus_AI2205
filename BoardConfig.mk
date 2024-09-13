@@ -12,17 +12,10 @@ ALLOW_MISSING_DEPENDENCIES := true
 
 # A/B
 AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-    odm \
-    system \
-    system_dlkm \
-    product \
-    system_ext \
-    vendor \
-    vendor_dlkm \
-    vendor_boot \
-    recovery \
-    boot
+# A/B updater updatable partitions list. Keep in sync with the partition list
+# with "_a" and "_b" variants in the device. Note that the vendor can add more
+# more partitions to this list for the bootloader and radio.
+AB_OTA_PARTITIONS ?= boot vendor_boot recovery vendor vendor_dlkm odm dtbo vbmeta
 
 # Architecture
 TARGET_ARCH := arm64
@@ -86,10 +79,11 @@ BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_INIT_BOOTIMAGE_PARTITION_SIZE := 8388608
 
 # Partitions, Super
-BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
-BOARD_SUPER_PARTITION_GROUPS := asus_dynamic_partitions
-BOARD_ASUS_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor odm vendor_dlkm
-BOARD_ASUS_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
+BOARD_SUPER_PARTITION_SIZE := 6561452920
+BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
+BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := vendor vendor_dlkm odm
+# BOARD_SUPER_PARTITION_SIZE - 4MB
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6561448824
 
 # Partitions, Type
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
